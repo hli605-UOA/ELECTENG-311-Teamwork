@@ -1,0 +1,954 @@
+Plecs {
+  Name          "Student_Example"
+  Version       "5.0"
+  CircuitModel  "ContStateSpace"
+  StartTime     "0.0"
+  TimeSpan      "20e-3"
+  Timeout       ""
+  Solver        "auto"
+  MaxStep       "1e-3"
+  InitStep      "-1"
+  FixedStep     "1e-3"
+  Refine        "1"
+  ZCStepSize    "1e-9"
+  RelTol        "1e-3"
+  AbsTol        "-1"
+  TurnOnThreshold "0"
+  NonIdealSwitchResistance "1"
+  SyncFixedStepTasks "2"
+  UseSingleCommonBaseRate "2"
+  LossVariableLimitExceededMsg "3"
+  NegativeSwitchLossMsg "3"
+  DivisionByZeroMsg "3"
+  DatatypeOverflowMsg "3"
+  DatatypeInheritanceConflictMsg "2"
+  ContSampleTimeConflictMsg "2"
+  StiffnessDetectionMsg "2"
+  MaxConsecutiveZCs "1000"
+  AlgebraicLoopWithStateMachineMsg "3"
+  AssertionAction "1"
+  FixedPointDatatypeOverride "1"
+  InitializationCommands "R1 = 10\nR2 = R1*100\nf = 1e3\nw = 2*pi*f"
+  InitialState  "1"
+  SystemState   ""
+  JacobianComputation "2"
+  TaskingMode   "1"
+  TaskConfigurations ""
+  CodeGenParameterInlining "2"
+  CodeGenFloatingPointFormat "2"
+  CodeGenAbsTimeUsageMsg "3"
+  CodeGenBaseName ""
+  CodeGenOutputDir ""
+  CodeGenExtraOpts ""
+  CodeGenTarget "Generic"
+  CodeGenTargetSettings ""
+  ExtendedMatrixPrecision "1"
+  MatrixSignificanceCheck "2"
+  RemoveUnusedStateSpaceOutputs "2"
+  EnableStateSpaceSplitting "2"
+  DisplayStateSpaceSplitting "1"
+  DiscretizationMethod "2"
+  ExternalModeSettings ""
+  AlgebraicLoopMethod "1"
+  AlgebraicLoopTolerance "1e-6"
+  ScriptsDialogGeometry ""
+  ScriptsDialogSplitterPos "0"
+  MixedSignalSolverBypassOperatingPoint "1"
+  MixedSignalSolverInitialConditions "2"
+  MixedSignalSolverMaxNewtonIterations "25"
+  MixedSignalSolverNumThreads "-1"
+  OperatingPointMaxNewtonIterations "50"
+  OperatingPointRelativeNewtonTolerance "1e-3"
+  OperatingPointAbsoluteNewtonTolerance "1e-12"
+  OperatingPointNodalVoltageNewtonTolerance "1e-6"
+  SpiceTemperature "27"
+  SpiceGMin     "0"
+  SpiceInductorRPar "0"
+  SpiceInductorRSer "0"
+  SpiceCapacitorGPar "0"
+  SpiceCapacitorRSer "0"
+  NetlistParserDetails "2"
+  InvalidNetlistFunctionEvaluationMsg "1"
+  IncompatibleInitialConditionMsg "2"
+  Schematic {
+    Location      [0, 62; 1920, 990]
+    ZoomFactor    1.77778
+    SliderPosition [0, 119]
+    ShowBrowser   off
+    BrowserWidth  100
+    Component {
+      Type          DCVoltageSource
+      Name          "V_dc"
+      Show          on
+      Position      [290, 215]
+      Direction     down
+      Flipped       on
+      LabelPosition east
+      Parameter {
+        Variable      "V"
+        Value         "10"
+        Show          on
+      }
+    }
+    Component {
+      Type          Resistor
+      Name          "R1"
+      Show          on
+      Position      [705, 215]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "R"
+        Value         "100"
+        Show          on
+      }
+    }
+    Component {
+      Type          Ground
+      Name          "Ground"
+      Show          off
+      Position      [495, 310]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+    }
+    Component {
+      Type          Scope
+      Name          "Scope"
+      Show          on
+      Position      [890, 95]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Frame         [-15, -15; 15, 15]
+      Location      [676, 62; 1722, 1017]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAAQWAAAAW/w"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAABBYAAABFAP///wAABBYAAANDAAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAA="
+      HeaderState   "{\"DefaultSecSize\":0,\"FirstSecSize\":176,\"Labels\":[],"
+"\"VisualIdxs\":[]}"
+      PlotPalettes  "AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      Axes          "1"
+      TimeRange     "0.0"
+      ScrollingMode "1"
+      SingleTimeAxis "1"
+      Open          "1"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    "Time / s"
+      ShowLegend    "1"
+      Axis {
+        Name          ""
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis       on
+        AxisLabel         "Frequency / Hz"
+        Scaling           0
+        PhaseDisplay      0
+        ShowFourierLegend off
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
+    Component {
+      Type          PlecsProbe
+      Name          "Probe"
+      Show          on
+      Position      [815, 95]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Probe {
+        Component     "R1"
+        Path          ""
+        Signals       {"Resistor power", "Resistor voltage", "Resistor current"}
+      }
+    }
+    Component {
+      Type          Netlist
+      Name          "Netlist1"
+      Show          off
+      Position      [655, 480]
+      Direction     right
+      Flipped       off
+      LabelPosition west
+      Frame         [-40, -35; 40, 35]
+      IconDisplayCommands "Icon:line({-50,50},{-40,-40})\n"
+"Icon:line({-50,0},{-40,40})\n"
+"Icon:line({50,0},{-40,40})\n"
+"Icon:text(0, 20, 'OUT', 'FontSize', 9)\n"
+"Icon:text(20, -30, 'IN+', 'FontSize', 9)\n"
+"Icon:text(-20, -30, 'IN-', 'FontSize', 9)\n"
+"Icon:text(-20, -10, 'VCC', 'FontSize', 9)\n"
+"Icon:text(20, -10, 'VEE', 'FontSize', 9)\n"
+"Icon:text(0, -15, 'LM358', 'FontSize', 9)"
+      IconDisplayLanguage "2"
+      IconFrame           off
+      IconOpaque          on
+      IconRotates         on
+      Parameter {
+        Variable      "Netlist"
+        Value         "* BEGIN SPICE MODEL LM358\n"
+"* ON SEMICONDUCTOR NEXT GEN MODEL 9/27/2018\n"
+"* MODEL FEATURES INCLUDE OUTPUT SWING, OUTPUT CURRENT\n"
+"* THROUGH THE SUPPLY RAILS, CLASS B OUTPUT STAGE, OUTPUT\n"
+"* SWING, OPEN LOOP GAIN AND PHASE WITH RL AND CL EFFECTS,\n"
+"* POWER SUPPLY REJECTION WITH FREQUENCY EFFECTS, COMMON\n"
+"* MODE REJECTION WITH FREQUENCY EFFECTS, INPUT VOLTAGE\n"
+"* NOISE WITH 1/F, INPUT CURRENT NOISE, INPUT BIAS AND\n"
+"* OFFSET CURRENT, INPUT COMMON MODE VOLTAGE RANGE, VOS\n"
+"* WITH TEMPERATURE EFFECTS, AND QUIESCENT CURRENT WITH\n"
+"* TEMPERATURE EFFECTS.\n"
+"* MODEL TOTAL SUPPLY VOLTAGE RANGE IS 3 TO 36 V.\n"
+"* MODEL TEMP RANGE IS -55 TO +125 DEG C.\n"
+"* NOTE THAT MODEL IS FUNCTIONAL OVER THIS TEMP RANGE\n"
+"* BUT NOT ALL PARAMETERS TRACK THOSE OF THE REAL PART.\n"
+"* NOTE THAT LIKE THE REAL PART THERE IS NO AB BIAS\n"
+"* IN THE OUTPUT STAGE WHICH UNDER SOME CIRCUMSTANCES\n"
+"* CAUSES HIGH OUTPUT IMPEDANCE AND OR CROSSOVER DELAY\n"
+"* WHICH CAN EFFECT THE PERFORMANCE IN SOME CIRCUITS.\n"
+"* THE COMBINATION OF OUTPUT CURRENT SINK AND NO AB\n"
+"* BIAS WHEN USED WITH A LARGE CLOAD CAN CAUSE SOME\n"
+"* INTERESTING SMALL SIGNAL STEP OVERSHOOTS THAT ARE\n"
+"* LARGER THAN NORMAL AND RAMP LINEARLY RATHER THAN\n"
+"* BEING SHAPED LIKE A CLASSIC OVERSHOOT. THIS HAPPENS\n"
+"* IDENTICALLY WITH THE REAL PART AND THE MODEL.\n"
+"*\n"
+"* PINOUT ORDER +IN -IN +V -V OUT\n"
+"* PINOUT ORDER  1   2   3  4  5\n"
+".SUBCKT LM358 1 2 3 4 5\n"
+"R44 4 6 4E4\n"
+"I1 4 7 0.5E-6\n"
+"Q1 4 8 9 QPI\n"
+"Q2 4 2 10 QPA\n"
+"Q3 9 9 11 QPI\n"
+"Q4 10 10 11 QPI\n"
+"Q5 12 13 4 QNQ\n"
+"Q6 13 13 4 QNQ\n"
+"Q7 4 12 14 QPQ\n"
+"Q8 3 14 6 QNQ\n"
+"Q9 15 6 4 QNQ\n"
+"Q10 3 15 16 QNQ\n"
+"Q11 3 16 17 QNQ\n"
+"R67 17 16 4E4\n"
+"R68 5 17 18\n"
+"Q12 4 15 5 QPQ\n"
+"Q13 15 17 5 QNQ\n"
+"I2 18 3 120E-9\n"
+"I3 19 3 60E-9\n"
+"I4 20 3 1E-6\n"
+"Q14 11 18 3 QPQ\n"
+"Q15 14 19 3 QPQ\n"
+"Q16 5 7 4 QNQ\n"
+"Q17 15 20 3 QPQ\n"
+"C15 21 22 4.8E-12\n"
+"R69 12 21 3\n"
+"R70 12 15 3E9\n"
+"E2 23 8 3 0 -10E-6\n"
+"V51 23 1 1.56E-3\n"
+"I6 3 4 5E-6\n"
+"R71 4 3 4.5E5\n"
+"Q18 12 9 11 QPQ\n"
+"Q19 13 10 11 QPQ\n"
+"C17 12 13 8E-12\n"
+"C18 6 15 1E-12\n"
+"C21 3 24 100E-15\n"
+"R78 11 24 3E5\n"
+"C22 1 2 0.23E-12\n"
+"C23 2 0 0.79E-12\n"
+"C24 1 0 0.79E-12\n"
+"E3 22 0 15 0 2\n"
+"C25 5 0 50E-15\n"
+"Q20 25 25 0 QNQ\n"
+"G1 3 4 VT 0 3E-4\n"
+"I7 0 25 1E-3\n"
+"V53 25 26 0.25\n"
+"R79 0 26 1E6\n"
+"E4 VT 0 27 26 1\n"
+"R80 0 VT 1E6\n"
+"V54 27 0 0.55\n"
+"R81 0 27 1E6\n"
+".MODEL QPQ PNP IKF=3E-3 RC=300 KF=4.8E-17 BR=1\n"
+".MODEL QPA PNP IKF=3E-3 RC=380 IS=1.01E-16 VAF=245 RE=5 RB=1700 BF=300 KF=4.8"
+"E-17 BR=1\n"
+".MODEL QPI PNP IKF=3E-3 RC=380 IS=1.01E-16 VAF=290 RE=5 RB=1700 BF=306 KF=4.8"
+"E-17 BR=1\n"
+".MODEL QNQ NPN IKF=5E-3 RC=25  KF=4.8E-17 BR=1\n"
+".ENDS"
+        Show          off
+      }
+      Terminal {
+        Type          Port
+        Position      [20, -45]
+        Direction     up
+        Name          "1"
+        NetlistName   "1"
+      }
+      Terminal {
+        Type          Port
+        Position      [-20, -45]
+        Direction     up
+        Name          "2"
+        NetlistName   "2"
+      }
+      Terminal {
+        Type          Port
+        Position      [-40, -15]
+        Direction     left
+        Name          "3"
+        NetlistName   "3"
+      }
+      Terminal {
+        Type          Port
+        Position      [40, -15]
+        Direction     right
+        Name          "4"
+        NetlistName   "4"
+      }
+      Terminal {
+        Type          Port
+        Position      [0, 45]
+        Direction     down
+        Name          "5"
+        NetlistName   "5"
+      }
+      NetlistProbe {
+        Type          "V"
+        Name          "V+"
+        Details       "1"
+      }
+      NetlistProbe {
+        Type          "V"
+        Name          "V-"
+        Details       "2"
+      }
+      NetlistProbe {
+        Type          "V"
+        Name          "Vo"
+        Details       "5"
+      }
+    }
+    Component {
+      Type          Label
+      Name          "Label"
+      Show          off
+      Position      [325, 125]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "10V"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Label
+      Name          "Label1"
+      Show          off
+      Position      [670, 420]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "10V"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Ground
+      Name          "Ground1"
+      Show          off
+      Position      [670, 535]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+    }
+    Component {
+      Type          Scope
+      Name          "Scope1"
+      Show          on
+      Position      [890, 150]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Frame         [-15, -15; 15, 15]
+      Location      [82, 62; 1055, 990]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAAPNAAAAW/w"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA80AAABFAP///wAAA80AAAMoAAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAA="
+      HeaderState   "{\"DefaultSecSize\":0,\"FirstSecSize\":132,\"Labels\":[],"
+"\"VisualIdxs\":[]}"
+      PlotPalettes  "AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      Axes          "1"
+      TimeRange     "0.0"
+      ScrollingMode "1"
+      SingleTimeAxis "1"
+      Open          "1"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    "Time / s"
+      ShowLegend    "1"
+      Axis {
+        Name          ""
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis       on
+        AxisLabel         "Frequency / Hz"
+        Scaling           0
+        PhaseDisplay      0
+        ShowFourierLegend off
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
+    Component {
+      Type          PlecsProbe
+      Name          "Probe1"
+      Show          on
+      Position      [815, 150]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Probe {
+        Component     "Netlist1"
+        Path          ""
+        Signals       {"V+", "V-", "Vo"}
+      }
+    }
+    Component {
+      Type          Resistor
+      Name          "R4"
+      Show          on
+      Position      [840, 410]
+      Direction     down
+      Flipped       on
+      LabelPosition west
+      Parameter {
+        Variable      "R"
+        Value         "1e3"
+        Show          on
+      }
+    }
+    Component {
+      Type          Resistor
+      Name          "R5"
+      Show          on
+      Position      [840, 500]
+      Direction     down
+      Flipped       on
+      LabelPosition west
+      Parameter {
+        Variable      "R"
+        Value         "1e3"
+        Show          on
+      }
+    }
+    Component {
+      Type          Ground
+      Name          "Ground4"
+      Show          off
+      Position      [840, 545]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+    }
+    Component {
+      Type          Label
+      Name          "Label2"
+      Show          off
+      Position      [650, 130]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "Vout"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Label
+      Name          "Label3"
+      Show          off
+      Position      [840, 370]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "Vout"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Capacitor
+      Name          "C1"
+      Show          on
+      Position      [620, 215]
+      Direction     down
+      Flipped       on
+      LabelPosition west
+      Parameter {
+        Variable      "C"
+        Value         "100e-6"
+        Show          on
+      }
+      Parameter {
+        Variable      "v_init"
+        Value         "0"
+        Show          on
+      }
+    }
+    Component {
+      Type          DCVoltageSource
+      Name          "V_dc1"
+      Show          on
+      Position      [375, 555]
+      Direction     down
+      Flipped       on
+      LabelPosition east
+      Parameter {
+        Variable      "V"
+        Value         "2.5"
+        Show          on
+      }
+    }
+    Component {
+      Type          Ground
+      Name          "Ground3"
+      Show          off
+      Position      [375, 580]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+    }
+    Component {
+      Type          Label
+      Name          "Label4"
+      Show          off
+      Position      [375, 515]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "VREF"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Label
+      Name          "Label5"
+      Show          off
+      Position      [735, 500]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Tag"
+        Value         "VREF"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Resistor
+      Name          "R6"
+      Show          on
+      Position      [525, 480]
+      Direction     right
+      Flipped       on
+      LabelPosition south
+      Parameter {
+        Variable      "R"
+        Value         "1e3"
+        Show          on
+      }
+    }
+    Component {
+      Type          Netlist
+      Name          "Netlist2"
+      Show          off
+      Position      [465, 145]
+      Direction     left
+      Flipped       off
+      LabelPosition east
+      Frame         [-20, -20; 20, 20]
+      IconDisplayCommands "local IconLib = require('PlecsIconLib')\n"
+"\n"
+"IconLib.bjt(0, 0)\n"
+"\n"
+"Icon:text(10, 0, 'BD179', 'FontSize', 9)"
+      IconDisplayLanguage "2"
+      IconFrame           off
+      IconOpaque          on
+      IconRotates         on
+      Parameter {
+        Variable      "Netlist"
+        Value         ".subckt Qbd179 c b e\n"
+"Q c b e Qbd179\n"
+".ends\n"
+"\n"
+"*--------------- End of main subcircuit ----------------------\n"
+"*--------------- References are appended below ---------------\n"
+"\n"
+".MODEL Qbd179 npn IS=2.17735e-10 BF=87.3643 NF=1.21238 VAF=10 IKF=5.92007 ISE"
+"=8.67187e-12 NE=3.34988 BR=3.54279 NR=1.26704 VAR=1.60537 IKR=8.04318 ISC=2.8"
+"8133e-13 NC=3.98064 RB=15.3279 IRB=0.1 RBM=0.1 RE=0.000912821 RC=0.254026 XTB"
+"=0.1 XTI=1 EG=1.05012 CJE=5.51549e-08 VJE=0.591953 MJE=0.457535 TF=1e-08 XTF="
+"1.35722 VTF=0.995733 ITF=0.999983 CJC=4.44061e-10 VJC=0.400133 MJC=0.410398 X"
+"CJC=0.803125 FC=0.585759 CJS=0 VJS=0.75 MJS=0.5 TR=1e-07 PTF=0 KF=0 AF=1\n"
+"\n"
+        Show          off
+      }
+      Terminal {
+        Type          Port
+        Position      [0, -25]
+        Direction     up
+        Name          "c"
+        NetlistName   "c"
+      }
+      Terminal {
+        Type          Port
+        Position      [-25, 0]
+        Direction     left
+        Name          "b"
+        NetlistName   "b"
+      }
+      Terminal {
+        Type          Port
+        Position      [0, 25]
+        Direction     down
+        Name          "e"
+        NetlistName   "e"
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Ground"
+      SrcTerminal   1
+      Points        [495, 290]
+      Branch {
+        Points        [620, 290]
+        Branch {
+          Points        [705, 290]
+          DstComponent  "R1"
+          DstTerminal   2
+        }
+        Branch {
+          DstComponent  "C1"
+          DstTerminal   2
+        }
+      }
+      Branch {
+        Points        [290, 290]
+        DstComponent  "V_dc"
+        DstTerminal   2
+      }
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Probe"
+      SrcTerminal   1
+      DstComponent  "Scope"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "V_dc"
+      SrcTerminal   1
+      Points        [290, 145; 325, 145]
+      Branch {
+        DstComponent  "Netlist2"
+        DstTerminal   1
+      }
+      Branch {
+        DstComponent  "Label"
+        DstTerminal   1
+      }
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Probe1"
+      SrcTerminal   1
+      DstComponent  "Scope1"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "R5"
+      SrcTerminal   2
+      DstComponent  "Ground4"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "R1"
+      SrcTerminal   1
+      Points        [705, 145; 650, 145]
+      Branch {
+        Points        [620, 145]
+        Branch {
+          DstComponent  "Netlist2"
+          DstTerminal   3
+        }
+        Branch {
+          DstComponent  "C1"
+          DstTerminal   1
+        }
+      }
+      Branch {
+        DstComponent  "Label2"
+        DstTerminal   1
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Ground3"
+      SrcTerminal   1
+      DstComponent  "V_dc1"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "V_dc1"
+      SrcTerminal   1
+      DstComponent  "Label4"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "R6"
+      SrcTerminal   1
+      Points        [465, 480]
+      DstComponent  "Netlist2"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "R5"
+      SrcTerminal   1
+      Points        [840, 460]
+      Branch {
+        DstComponent  "R4"
+        DstTerminal   2
+      }
+      Branch {
+        DstComponent  "Netlist1"
+        DstTerminal   2
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Label1"
+      SrcTerminal   1
+      DstComponent  "Netlist1"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Label5"
+      SrcTerminal   1
+      DstComponent  "Netlist1"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Ground1"
+      SrcTerminal   1
+      DstComponent  "Netlist1"
+      DstTerminal   4
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "R6"
+      SrcTerminal   2
+      DstComponent  "Netlist1"
+      DstTerminal   5
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Label3"
+      SrcTerminal   1
+      DstComponent  "R4"
+      DstTerminal   1
+    }
+    Annotation {
+      Name          "<html><body>\n<p><span style=\" font-weight:700; color:#0"
+"000b0;\">NPN Series Pass with No Compensation</span></p>\n<p><span style=\" f"
+"ont-weight:700; color:#0000b0;\">ELECTENG 311</span></p>\n<p><span style=\" f"
+"ont-size:9px; font-weight:700; color:#0000b0;\">Duleep J Thrimawithana (07-20"
+"26)</span></p></body></html>"
+      Position      [175, 70]
+    } 
+  }
+}
+DemoSignature "qyYuZSMVU91srsQrdephFRpjbvTtW2d0F6956ZlglG0="
