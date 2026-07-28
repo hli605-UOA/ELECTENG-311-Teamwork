@@ -122,11 +122,11 @@ Plecs {
       Flipped       off
       LabelPosition south
       Frame         [-15, -15; 15, 15]
-      Location      [676, 62; 1722, 1044]
+      Location      [676, 62; 1722, 1053]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAADAA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAGIA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABiAP///wAAAAMAAAQWAAAAVvw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAABBYAAABEAP///wAABBYAAANbAAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAABBYAAABEAP///wAABBYAAANkAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
@@ -824,6 +824,78 @@ Plecs {
         Show          on
       }
     }
+    Component {
+      Type          Netlist
+      Name          "Netlist3"
+      Show          off
+      Position      [505, 170]
+      Direction     right
+      Flipped       off
+      LabelPosition west
+      Frame         [-20, -20; 20, 20]
+      IconDisplayCommands "local IconLib = require('PlecsIconLib')\n"
+"\n"
+"IconLib.bjt(0, 0)\n"
+"\n"
+"Icon:text(10, 0, 'BD179', 'FontSize', 9)"
+      IconDisplayLanguage "2"
+      IconFrame           off
+      IconOpaque          on
+      IconRotates         on
+      Parameter {
+        Variable      "Netlist"
+        Value         ".subckt Qbd179 c b e\n"
+"Q c b e Qbd179\n"
+".ends\n"
+"\n"
+"*--------------- End of main subcircuit ----------------------\n"
+"*--------------- References are appended below ---------------\n"
+"\n"
+".MODEL Qbd179 npn IS=2.17735e-10 BF=87.3643 NF=1.21238 VAF=10 IKF=5.92007 ISE"
+"=8.67187e-12 NE=3.34988 BR=3.54279 NR=1.26704 VAR=1.60537 IKR=8.04318 ISC=2.8"
+"8133e-13 NC=3.98064 RB=15.3279 IRB=0.1 RBM=0.1 RE=0.000912821 RC=0.254026 XTB"
+"=0.1 XTI=1 EG=1.05012 CJE=5.51549e-08 VJE=0.591953 MJE=0.457535 TF=1e-08 XTF="
+"1.35722 VTF=0.995733 ITF=0.999983 CJC=4.44061e-10 VJC=0.400133 MJC=0.410398 X"
+"CJC=0.803125 FC=0.585759 CJS=0 VJS=0.75 MJS=0.5 TR=1e-07 PTF=0 KF=0 AF=1\n"
+"\n"
+        Show          off
+      }
+      Terminal {
+        Type          Port
+        Position      [0, -25]
+        Direction     up
+        Name          "c"
+        NetlistName   "c"
+      }
+      Terminal {
+        Type          Port
+        Position      [-25, 0]
+        Direction     left
+        Name          "b"
+        NetlistName   "b"
+      }
+      Terminal {
+        Type          Port
+        Position      [0, 25]
+        Direction     down
+        Name          "e"
+        NetlistName   "e"
+      }
+    }
+    Component {
+      Type          Resistor
+      Name          "R3"
+      Show          on
+      Position      [555, 145]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "R"
+        Value         "1.5"
+        Show          off
+      }
+    }
     Connection {
       Type          Wire
       SrcComponent  "Ground"
@@ -890,12 +962,20 @@ Plecs {
       Branch {
         Points        [620, 145]
         Branch {
-          DstComponent  "Netlist2"
-          DstTerminal   3
-        }
-        Branch {
           DstComponent  "C1"
           DstTerminal   1
+        }
+        Branch {
+          Points        [590, 145]
+          Branch {
+            DstComponent  "R3"
+            DstTerminal   1
+          }
+          Branch {
+            Points        [590, 170]
+            DstComponent  "Netlist3"
+            DstTerminal   1
+          }
         }
       }
       Branch {
@@ -916,14 +996,6 @@ Plecs {
       SrcTerminal   1
       DstComponent  "Label4"
       DstTerminal   1
-    }
-    Connection {
-      Type          Wire
-      SrcComponent  "R6"
-      SrcTerminal   1
-      Points        [465, 480]
-      DstComponent  "Netlist2"
-      DstTerminal   2
     }
     Connection {
       Type          Wire
@@ -997,6 +1069,34 @@ Plecs {
       DstComponent  "C2"
       DstTerminal   2
     }
+    Connection {
+      Type          Wire
+      SrcComponent  "R6"
+      SrcTerminal   1
+      Points        [465, 480; 465, 170]
+      Branch {
+        DstComponent  "Netlist2"
+        DstTerminal   2
+      }
+      Branch {
+        DstComponent  "Netlist3"
+        DstTerminal   3
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Netlist2"
+      SrcTerminal   3
+      Points        [505, 145]
+      Branch {
+        DstComponent  "Netlist3"
+        DstTerminal   2
+      }
+      Branch {
+        DstComponent  "R3"
+        DstTerminal   2
+      }
+    }
     Annotation {
       Name          "<html><body>\n<p><span style=\" font-weight:700; color:#0"
 "000b0;\">NPN Series Pass with No Compensation</span></p>\n<p><span style=\" f"
@@ -1007,4 +1107,4 @@ Plecs {
     } 
   }
 }
-DemoSignature "jiThtHSLSjXVl8v/+feJs6n+AhUZMXeFmgAXx7nh1Nc="
+DemoSignature "YVwcpEZWO0fH9KkULdqPEV68keocBc6ibA/WsshSz44="
