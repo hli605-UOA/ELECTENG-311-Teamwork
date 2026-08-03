@@ -6,7 +6,7 @@ Plecs {
   TimeSpan      "1.0"
   Timeout       ""
   Solver        "auto"
-  MaxStep       "1e-3"
+  MaxStep       "1e-5"
   InitStep      "-1"
   FixedStep     "1e-3"
   Refine        "1"
@@ -71,9 +71,9 @@ Plecs {
   InvalidNetlistFunctionEvaluationMsg "1"
   IncompatibleInitialConditionMsg "2"
   Schematic {
-    Location      [273, 42; 1896, 959]
+    Location      [567, 79; 1696, 908]
     ZoomFactor    1
-    SliderPosition [0, 0]
+    SliderPosition [7, 0]
     ShowBrowser   off
     BrowserWidth  158
     Component {
@@ -86,13 +86,13 @@ Plecs {
       LabelPosition north
       Parameter {
         Variable      "L"
-        Value         "0.001"
-        Show          off
+        Value         "37e-6"
+        Show          on
       }
       Parameter {
         Variable      "i_init"
         Value         "0"
-        Show          off
+        Show          on
       }
     }
     Component {
@@ -106,12 +106,12 @@ Plecs {
       Parameter {
         Variable      "Vf"
         Value         "0"
-        Show          off
+        Show          on
       }
       Parameter {
         Variable      "Ron"
         Value         "0"
-        Show          off
+        Show          on
       }
       Parameter {
         Variable      "thermal"
@@ -155,12 +155,12 @@ Plecs {
       Parameter {
         Variable      "Vf"
         Value         "0"
-        Show          off
+        Show          on
       }
       Parameter {
         Variable      "Ron"
         Value         "0"
-        Show          off
+        Show          on
       }
       Parameter {
         Variable      "thermal"
@@ -228,26 +228,26 @@ Plecs {
       Parameter {
         Variable      "C"
         Value         "100e-6"
-        Show          off
+        Show          on
       }
       Parameter {
         Variable      "v_init"
         Value         "0"
-        Show          off
+        Show          on
       }
     }
     Component {
       Type          Resistor
       Name          "RL"
       Show          on
-      Position      [895, 330]
+      Position      [895, 350]
       Direction     up
       Flipped       off
       LabelPosition east
       Parameter {
         Variable      "R"
-        Value         "1"
-        Show          off
+        Value         "5"
+        Show          on
       }
     }
     Component {
@@ -260,8 +260,165 @@ Plecs {
       LabelPosition east
       Parameter {
         Variable      "R"
-        Value         "1"
+        Value         "1e-3"
+        Show          on
+      }
+    }
+    Component {
+      Type          DCVoltageSource
+      Name          "Vin"
+      Show          on
+      Position      [325, 365]
+      Direction     down
+      Flipped       on
+      LabelPosition east
+      Parameter {
+        Variable      "V"
+        Value         "2.5"
+        Show          on
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Control/Modulators/Symmetrical PWM"
+      Name          "Symmetrical PWM"
+      Show          on
+      Position      [415, 585]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Frame         [-20, -20; 20, 20]
+      Parameter {
+        Variable      "sampling"
+        Value         "5"
         Show          off
+      }
+      Parameter {
+        Variable      "fc"
+        Value         "1e5"
+        Show          off
+      }
+      Parameter {
+        Variable      "carrier_phaseshift"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "carrier_limits"
+        Value         "[-1 1]"
+        Show          off
+      }
+      Parameter {
+        Variable      "output_values"
+        Value         "[0 1]"
+        Show          off
+      }
+      Terminal {
+        Type          Output
+        Position      [24, 0]
+        Direction     right
+      }
+      Terminal {
+        Type          Input
+        Position      [-20, 0]
+        Direction     left
+      }
+    }
+    Component {
+      Type          Constant
+      Name          "Constant"
+      Show          on
+      Position      [275, 585]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-10, -10; 10, 10]
+      Parameter {
+        Variable      "Value"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "DataType"
+        Value         "10"
+        Show          off
+      }
+    }
+    Component {
+      Type          Scope
+      Name          "Scope"
+      Show          on
+      Position      [1090, 135]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Frame         [-15, -15; 15, 15]
+      Location      [51, 87; 774, 939]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAADAA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAGIA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABiAP///wAAAAMAAALTAAAAc/w"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAAtMAAABEAP///wAAAtMAAAK8AAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAA="
+      HeaderState   "{\"DefaultSecSize\":100,\"FirstSecSize\":181,\"Labels\":["
+"\"Delta\",\"Min\",\"Max\",\"RMS\"],\"VisualIdxs\":[3,5,6,9]}"
+      PlotPalettes  "AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      Axes          "1"
+      TimeRange     "0.0"
+      ScrollingMode "1"
+      SingleTimeAxis "1"
+      Open          "0"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    "Time / s"
+      ShowLegend    "1"
+      Axis {
+        Name          ""
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis       on
+        AxisLabel         "Frequency / Hz"
+        Scaling           0
+        PhaseDisplay      0
+        ShowFourierLegend off
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
+    Component {
+      Type          PlecsProbe
+      Name          "Probe"
+      Show          on
+      Position      [985, 135]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Probe {
+        Component     "RL"
+        Path          ""
+        Signals       {"Resistor voltage"}
+      }
+      Probe {
+        Component     "L1"
+        Path          ""
+        Signals       {"Inductor current"}
       }
     }
     Connection {
@@ -310,6 +467,8 @@ Plecs {
         Points        [560, 495]
         Branch {
           Points        [325, 495]
+          DstComponent  "Vin"
+          DstTerminal   2
         }
         Branch {
           DstComponent  "Ri"
@@ -337,11 +496,35 @@ Plecs {
       }
     }
     Connection {
+      Type          Signal
+      SrcComponent  "Symmetrical PWM"
+      SrcTerminal   1
+      Points        [480, 585; 480, 330]
+      DstComponent  "S1"
+      DstTerminal   3
+    }
+    Connection {
       Type          Wire
       SrcComponent  "L1"
       SrcTerminal   1
       Points        [325, 230]
+      DstComponent  "Vin"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Constant"
+      SrcTerminal   1
+      DstComponent  "Symmetrical PWM"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Probe"
+      SrcTerminal   1
+      DstComponent  "Scope"
+      DstTerminal   1
     }
   }
 }
-DemoSignature "qvUdvPQI7GL/kJ7Pt3YDaycD9piPVzRSRu9fX8Gdn08="
+DemoSignature "xxgXHodnu/iLX9FHjBD8MKxepX7MWEwCKR6T6BBeQkc="
