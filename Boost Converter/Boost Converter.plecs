@@ -97,55 +97,6 @@ Plecs {
     }
     Component {
       Type          Diode
-      Name          "D1"
-      Show          on
-      Position      [580, 330]
-      Direction     down
-      Flipped       off
-      LabelPosition east
-      Parameter {
-        Variable      "Vf"
-        Value         "0"
-        Show          on
-      }
-      Parameter {
-        Variable      "Ron"
-        Value         "0"
-        Show          on
-      }
-      Parameter {
-        Variable      "thermal"
-        Value         ""
-        Show          off
-      }
-      Parameter {
-        Variable      "Rth"
-        Value         "0"
-        Show          off
-      }
-      Parameter {
-        Variable      "Np"
-        Value         "1"
-        Show          off
-      }
-      Parameter {
-        Variable      "T_init"
-        Value         ""
-        Show          off
-      }
-      Parameter {
-        Variable      "SwitchModel"
-        Value         "1"
-        Show          off
-      }
-      Parameter {
-        Variable      "f_grid"
-        Value         "0"
-        Show          off
-      }
-    }
-    Component {
-      Type          Diode
       Name          "D2"
       Show          on
       Position      [665, 230]
@@ -154,7 +105,7 @@ Plecs {
       LabelPosition south
       Parameter {
         Variable      "Vf"
-        Value         "0"
+        Value         "0.5"
         Show          on
       }
       Parameter {
@@ -180,30 +131,6 @@ Plecs {
       Parameter {
         Variable      "T_init"
         Value         ""
-        Show          off
-      }
-      Parameter {
-        Variable      "SwitchModel"
-        Value         "1"
-        Show          off
-      }
-      Parameter {
-        Variable      "f_grid"
-        Value         "0"
-        Show          off
-      }
-    }
-    Component {
-      Type          Switch
-      Name          "S1"
-      Show          on
-      Position      [540, 330]
-      Direction     down
-      Flipped       off
-      LabelPosition east
-      Parameter {
-        Variable      "s_init"
-        Value         "0"
         Show          off
       }
       Parameter {
@@ -353,22 +280,22 @@ Plecs {
       Flipped       off
       LabelPosition south
       Frame         [-15, -15; 15, 15]
-      Location      [51, 87; 774, 939]
+      Location      [51, 87; 774, 957]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAADAA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAGIA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABiAP///wAAAAMAAALTAAAAc/w"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAAtMAAABEAP///wAAAtMAAAK8AAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAAtMAAABEAP///wAAAtMAAALOAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "{\"DefaultSecSize\":100,\"FirstSecSize\":181,\"Labels\":["
-"\"Delta\",\"Min\",\"Max\",\"RMS\"],\"VisualIdxs\":[3,5,6,9]}"
+      HeaderState   "{\"DefaultSecSize\":0,\"FirstSecSize\":181,\"Labels\":[\""
+"Delta\",\"Min\",\"Max\",\"RMS\"],\"VisualIdxs\":[3,5,6,9]}"
       PlotPalettes  "AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
       Axes          "1"
       TimeRange     "0.0"
       ScrollingMode "1"
       SingleTimeAxis "1"
-      Open          "0"
+      Open          "1"
       Ts            "-1"
       SampleLimit   "0"
       XAxisLabel    "Time / s"
@@ -421,26 +348,43 @@ Plecs {
         Signals       {"Inductor current"}
       }
     }
-    Connection {
-      Type          Wire
-      SrcComponent  "S1"
-      SrcTerminal   2
-      Points        [540, 290; 560, 290]
-      Branch {
-        Points        [580, 290]
-        DstComponent  "D1"
-        DstTerminal   2
+    Component {
+      Type          Mosfet
+      Name          "FET1"
+      Show          on
+      Position      [560, 330]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Ron"
+        Value         "0.08"
+        Show          on
       }
-      Branch {
-        Points        [560, 230]
-        Branch {
-          DstComponent  "L1"
-          DstTerminal   2
-        }
-        Branch {
-          DstComponent  "D2"
-          DstTerminal   1
-        }
+      Parameter {
+        Variable      "s_init"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "thermal"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "Rth"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Np"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "T_init"
+        Value         ""
+        Show          off
       }
     }
     Connection {
@@ -482,29 +426,6 @@ Plecs {
     }
     Connection {
       Type          Wire
-      SrcComponent  "S1"
-      SrcTerminal   1
-      Points        [540, 375; 560, 375]
-      Branch {
-        Points        [580, 375]
-        DstComponent  "D1"
-        DstTerminal   1
-      }
-      Branch {
-        DstComponent  "Ri"
-        DstTerminal   1
-      }
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "Symmetrical PWM"
-      SrcTerminal   1
-      Points        [480, 585; 480, 330]
-      DstComponent  "S1"
-      DstTerminal   3
-    }
-    Connection {
-      Type          Wire
       SrcComponent  "L1"
       SrcTerminal   1
       Points        [325, 230]
@@ -525,6 +446,35 @@ Plecs {
       DstComponent  "Scope"
       DstTerminal   1
     }
+    Connection {
+      Type          Signal
+      SrcComponent  "Symmetrical PWM"
+      SrcTerminal   1
+      Points        [480, 585; 480, 330]
+      DstComponent  "FET1"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "FET1"
+      SrcTerminal   2
+      DstComponent  "Ri"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "L1"
+      SrcTerminal   2
+      Points        [560, 230]
+      Branch {
+        DstComponent  "D2"
+        DstTerminal   1
+      }
+      Branch {
+        DstComponent  "FET1"
+        DstTerminal   1
+      }
+    }
   }
 }
-DemoSignature "xxgXHodnu/iLX9FHjBD8MKxepX7MWEwCKR6T6BBeQkc="
+DemoSignature "0FNplOTlavy9XPkHluDcjKRBdyOXVnbxa9LH+IyNuDo="
