@@ -1,5 +1,5 @@
 Plecs {
-  Name          "Boost_Converter_Open_Loop"
+  Name          "Boost_Converter_PR2"
   Version       "5.0"
   CircuitModel  "ContStateSpace"
   StartTime     "0.0"
@@ -93,7 +93,7 @@ Plecs {
       MaskIconOpaque off
       MaskIconRotates on
       Schematic {
-        Location      [436, 62; 1731, 866]
+        Location      [66, 97; 1361, 901]
         ZoomFactor    1.33333
         SliderPosition [-1, 0]
         ShowBrowser   off
@@ -173,16 +173,16 @@ Plecs {
           Flipped       off
           LabelPosition south
           Frame         [-15, -25; 15, 25]
-          Location      [69, 65; 797, 931]
+          Location      [913, 58; 1846, 998]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAKgA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
-"AA/////wAAAGIA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABiAP///wAAAAMAAALYAAA"
-"BA/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAAtgAAABEAP///wAAAtgAAAI6"
+"AA/////wAAAGIA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABiAP///wAAAAMAAAOlAAA"
+"BKPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA6UAAABEAP///wAAA6UAAAJf"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
-          HeaderState   "{\"DefaultSecSize\":100,\"FirstSecSize\":199,\"Labels"
-"\":[\"Delta\",\"Mean\",\"RMS\"],\"VisualIdxs\":[3,8,9]}"
+          HeaderState   "{\"DefaultSecSize\":100,\"FirstSecSize\":185,\"Labels"
+"\":[\"Delta\",\"Min\",\"Max\",\"Mean\",\"RMS\"],\"VisualIdxs\":[3,5,6,8,9]}"
           PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 "QAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -338,6 +338,11 @@ Plecs {
             Path          "Open-Loop"
             Signals       {"Inductor voltage"}
           }
+          Probe {
+            Component     "C1"
+            Path          "Open-Loop"
+            Signals       {"Capacitor voltage", "Capacitor current"}
+          }
         }
         Component {
           Type          Resistor
@@ -375,6 +380,16 @@ Plecs {
             Component     "R1"
             Path          "Open-Loop"
             Signals       {"Resistor power"}
+          }
+          Probe {
+            Component     "D1"
+            Path          "Open-Loop"
+            Signals       {"Diode voltage", "Diode current"}
+          }
+          Probe {
+            Component     "FETD"
+            Path          "Open-Loop"
+            Signals       {"Device voltage", "Device current"}
           }
         }
         Component {
@@ -579,9 +594,9 @@ Plecs {
           Name          "Step"
           Show          on
           Position      [425, 350]
-          Direction     right
+          Direction     down
           Flipped       on
-          LabelPosition south
+          LabelPosition west
           Parameter {
             Variable      "Time"
             Value         "2e-3"
@@ -743,6 +758,7 @@ Plecs {
           Type          Signal
           SrcComponent  "Step"
           SrcTerminal   1
+          Points        [390, 330; 390, 350]
           DstComponent  "Sawtooth PWM"
           DstTerminal   2
         }
