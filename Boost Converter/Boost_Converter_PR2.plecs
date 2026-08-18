@@ -84,6 +84,7 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition none
+      CommentOut    DisabledOpenCircuit
       Frame         [-110, -80; 110, 80]
       SampleTime    "-1"
       CodeGenDiscretizationMethod "2"
@@ -93,7 +94,7 @@ Plecs {
       MaskIconOpaque off
       MaskIconRotates on
       Schematic {
-        Location      [66, 97; 1361, 901]
+        Location      [101, 130; 1396, 934]
         ZoomFactor    1.33333
         SliderPosition [-1, 0]
         ShowBrowser   off
@@ -772,7 +773,6 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition none
-      CommentOut    DisabledOpenCircuit
       Frame         [-110, -80; 110, 80]
       SampleTime    "-1"
       CodeGenDiscretizationMethod "2"
@@ -782,7 +782,7 @@ Plecs {
       MaskIconOpaque off
       MaskIconRotates on
       Schematic {
-        Location      [436, 239; 1444, 866]
+        Location      [377, 172; 1779, 861]
         ZoomFactor    1
         SliderPosition [0, 0]
         ShowBrowser   off
@@ -797,7 +797,7 @@ Plecs {
           LabelPosition north
           Parameter {
             Variable      "L"
-            Value         "100e-6"
+            Value         "50e-6"
             Show          on
           }
           Parameter {
@@ -816,7 +816,7 @@ Plecs {
           LabelPosition west
           Parameter {
             Variable      "C"
-            Value         "22e-6"
+            Value         "220e-6"
             Show          on
           }
           Parameter {
@@ -1733,7 +1733,7 @@ Plecs {
       MaskIconOpaque off
       MaskIconRotates on
       Schematic {
-        Location      [172, 65; 1552, 892]
+        Location      [273, 97; 1653, 924]
         ZoomFactor    1.33333
         SliderPosition [0, 0]
         ShowBrowser   off
@@ -1748,7 +1748,7 @@ Plecs {
           LabelPosition north
           Parameter {
             Variable      "L"
-            Value         "100e-6"
+            Value         "50e-6"
             Show          on
           }
           Parameter {
@@ -1767,7 +1767,7 @@ Plecs {
           LabelPosition west
           Parameter {
             Variable      "C"
-            Value         "22e-6"
+            Value         "220e-6"
             Show          on
           }
           Parameter {
@@ -1813,16 +1813,16 @@ Plecs {
           Flipped       off
           LabelPosition south
           Frame         [-15, -25; 15, 25]
-          Location      [111, 65; 960, 924]
+          Location      [111, 65; 960, 942]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
-"wBvAG0AQQByAGUAYQAAAAAA/////wAAAKwA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
-"AA/////wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAANRAAA"
-"AffwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA1EAAABFAP///wAAA1EAAALB"
+"wBvAG0AQQByAGUAYQAAAAAA/////wAAAKgA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
+"AA/////wAAAGIA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABiAP///wAAAAMAAANRAAA"
+"AffwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA1EAAABEAP///wAAA1EAAALL"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
-          HeaderState   "{\"DefaultSecSize\":0,\"FirstSecSize\":199,\"Labels\""
-":[\"Delta\",\"Mean\",\"RMS\"],\"VisualIdxs\":[3,8,9]}"
+          HeaderState   "{\"DefaultSecSize\":100,\"FirstSecSize\":199,\"Labels"
+"\":[\"Delta\",\"Mean\",\"RMS\"],\"VisualIdxs\":[3,8,9]}"
           PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 "QAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1834,7 +1834,7 @@ Plecs {
           Ts            "-1"
           SampleLimit   "0"
           XAxisLabel    "Time / s"
-          ShowLegend    "1"
+          ShowLegend    "2"
           Axis {
             Name          "D"
             AutoScale     1
@@ -6648,7 +6648,7 @@ Plecs {
       MaskIconOpaque off
       MaskIconRotates on
       Schematic {
-        Location      [0, 231; 1924, 1058]
+        Location      [313, 144; 1630, 971]
         ZoomFactor    1.33333
         SliderPosition [0, 0]
         ShowBrowser   off
@@ -8710,8 +8710,8 @@ Plecs {
     FrequencyScale "2"
     Amplitude     "1e-3"
     NumPoints     "300"
-    Perturbation  "Peak Current Control/SSPerturbation2"
-    Response      "Peak Current Control/SSResponse2"
+    Perturbation  "Voltage Control\\nLoop Gain/SSPerturbation"
+    Response      "Voltage Control\\nLoop Gain/SSResponse"
     JacobianPerturbation "1e-4"
     JacobianCalculation "1"
     InitCycles    "1000"
