@@ -2039,11 +2039,11 @@ Plecs {
           Flipped       off
           LabelPosition south
           Frame         [-15, -15; 15, 15]
-          Location      [291, 156; 1220, 1010]
+          Location      [291, 156; 1220, 1019]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAADAA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAGIA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABiAP///wAAAAMAAAOhAAA"
-"Ac/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA6EAAABEAP///wAAA6EAAAK+"
+"Ac/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA6EAAABEAP///wAAA6EAAALH"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
@@ -2054,7 +2054,7 @@ Plecs {
           TimeRange     "0"
           ScrollingMode "1"
           SingleTimeAxis "1"
-          Open          "0"
+          Open          "1"
           Ts            "-1"
           SampleLimit   "0"
           XAxisLabel    "Time / s"
@@ -2917,6 +2917,248 @@ Plecs {
             Show          on
           }
         }
+        Component {
+          Type          Netlist
+          Name          "Netlist3"
+          Show          off
+          Position      [905, 385]
+          Direction     up
+          Flipped       off
+          LabelPosition south
+          Frame         [-25, -25; 25, 25]
+          IconDisplayCommands "-- LM393A comparator icon\n"
+"\n"
+"-- Triangle\n"
+"Icon:line({-20, -20}, {-20, 20})\n"
+"Icon:line({-20, 20}, {-20, 0})\n"
+"Icon:line({20, -20}, {0, 20})\n"
+"\n"
+"-- Input wires\n"
+"Icon:line({-30, -20}, {-10, -10})\n"
+"Icon:line({-30, -20}, {10, 10})\n"
+"\n"
+"-- Output wire\n"
+"Icon:line({20, 30}, {0, 0})\n"
+"\n"
+"-- Supply wires\n"
+"Icon:line({0, 0}, {-10, -25})\n"
+"Icon:line({0, 0}, {10, 25})\n"
+"\n"
+"-- Signs\n"
+"Icon:text(-13, -9, \"+\")\n"
+"Icon:text(-13, 9, \"-\")"
+          IconDisplayLanguage "2"
+          IconFrame           off
+          IconOpaque          off
+          IconRotates         on
+          Parameter {
+            Variable      "Netlist"
+            Value         "* LM393A VOLTAGE COMPARATOR \"MACROMODEL\" SUBCIRCU"
+"IT\n"
+"* CREATED USING PARTS VERSION 4.03 ON 03/07/90 AT 14:17\n"
+"* REV (N/A)\n"
+"* CONNECTIONS:   NON-INVERTING INPUT\n"
+"*                | INVERTING INPUT\n"
+"*                | | POSITIVE POWER SUPPLY\n"
+"*                | | | NEGATIVE POWER SUPPLY\n"
+"*                | | | | OPEN COLLECTOR OUTPUT\n"
+"*                | | | | |\n"
+".SUBCKT LM393A   1 2 3 4 5\n"
+"*\n"
+"F1    9  3 V1 1\n"
+"IEE   3  7 DC 100.0E-6\n"
+"VI1  21  1 DC .75\n"
+"VI2  22  2 DC .75\n"
+"Q1    9 21  7 QIN\n"
+"Q2    8 22  7 QIN\n"
+"Q3    9  8  4 QMO\n"
+"Q4    8  8  4 QMI\n"
+".MODEL QIN PNP(IS=800.0E-18 BF=2.000E3)\n"
+".MODEL QMI NPN(IS=800.0E-18 BF=1002)\n"
+".MODEL QMO NPN(IS=800.0E-18 BF=1000 CJC=1E-15 TR=807.4E-9)\n"
+"E1   10  4  9  4  1\n"
+"V1   10 11 DC 0\n"
+"Q5    5 11  4 QOC\n"
+".MODEL QOC NPN(IS=800.0E-18 BF=20.29E3 CJC=1E-15 TF=942.6E-12 TR=543.8E-9)\n"
+"DP    4  3 DX\n"
+"RP 3  4 46.3E3\n"
+".MODEL DX  D(IS=800.0E-18)\n"
+".ENDS"
+            Show          off
+          }
+          Terminal {
+            Type          Port
+            Position      [-30, -10]
+            Direction     left
+            Name          "1"
+            NetlistName   "1"
+          }
+          Terminal {
+            Type          Port
+            Position      [-30, 10]
+            Direction     left
+            Name          "2"
+            NetlistName   "2"
+          }
+          Terminal {
+            Type          Port
+            Position      [0, -30]
+            Direction     up
+            Name          "3"
+            NetlistName   "3"
+          }
+          Terminal {
+            Type          Port
+            Position      [0, 30]
+            Direction     down
+            Name          "4"
+            NetlistName   "4"
+          }
+          Terminal {
+            Type          Port
+            Position      [30, 0]
+            Direction     right
+            Name          "5"
+            NetlistName   "5"
+          }
+        }
+        Component {
+          Type          Label
+          Name          "Label6"
+          Show          off
+          Position      [860, 375]
+          Direction     left
+          Flipped       off
+          LabelPosition north
+          Parameter {
+            Variable      "Tag"
+            Value         "VREF"
+            Show          off
+          }
+          Parameter {
+            Variable      "Visibility"
+            Value         "2"
+            Show          off
+          }
+          Parameter {
+            Variable      "NoMatchingCounterpartAction"
+            Value         "2"
+            Show          off
+          }
+          Parameter {
+            Variable      "CustomMessage"
+            Value         ""
+            Show          off
+            Evaluate      on
+          }
+          Parameter {
+            Variable      "HighlightLevel"
+            Value         "0"
+            Show          off
+          }
+        }
+        Component {
+          Type          Label
+          Name          "Label7"
+          Show          off
+          Position      [905, 345]
+          Direction     up
+          Flipped       off
+          LabelPosition east
+          Parameter {
+            Variable      "Tag"
+            Value         "5V"
+            Show          off
+          }
+          Parameter {
+            Variable      "Visibility"
+            Value         "2"
+            Show          off
+          }
+          Parameter {
+            Variable      "NoMatchingCounterpartAction"
+            Value         "2"
+            Show          off
+          }
+          Parameter {
+            Variable      "CustomMessage"
+            Value         ""
+            Show          off
+            Evaluate      on
+          }
+          Parameter {
+            Variable      "HighlightLevel"
+            Value         "0"
+            Show          off
+          }
+        }
+        Component {
+          Type          Ground
+          Name          "Ground2"
+          Show          off
+          Position      [905, 425]
+          Direction     up
+          Flipped       off
+          LabelPosition east
+        }
+        Component {
+          Type          Resistor
+          Name          "R7"
+          Show          on
+          Position      [955, 385]
+          Direction     left
+          Flipped       on
+          LabelPosition north
+          Parameter {
+            Variable      "R"
+            Value         "1e4"
+            Show          on
+          }
+        }
+        Component {
+          Type          Label
+          Name          "Label8"
+          Show          off
+          Position      [985, 385]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "Tag"
+            Value         "5V"
+            Show          off
+          }
+          Parameter {
+            Variable      "Visibility"
+            Value         "2"
+            Show          off
+          }
+          Parameter {
+            Variable      "NoMatchingCounterpartAction"
+            Value         "2"
+            Show          off
+          }
+          Parameter {
+            Variable      "CustomMessage"
+            Value         ""
+            Show          off
+            Evaluate      on
+          }
+          Parameter {
+            Variable      "HighlightLevel"
+            Value         "0"
+            Show          off
+          }
+        }
+        Component {
+          Type          Ground
+          Name          "Ground5"
+          Show          off
+          Position      [875, 405]
+          Direction     up
+          Flipped       off
+          LabelPosition east
+        }
         Connection {
           Type          Wire
           SrcComponent  "Ground"
@@ -3142,6 +3384,48 @@ Plecs {
             DstComponent  "Netlist"
             DstTerminal   3
           }
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "Label7"
+          SrcTerminal   1
+          DstComponent  "Netlist3"
+          DstTerminal   3
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "Ground2"
+          SrcTerminal   1
+          DstComponent  "Netlist3"
+          DstTerminal   4
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "R7"
+          SrcTerminal   2
+          DstComponent  "Netlist3"
+          DstTerminal   5
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "Netlist3"
+          SrcTerminal   1
+          DstComponent  "Label6"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "Label8"
+          SrcTerminal   1
+          DstComponent  "R7"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "Ground5"
+          SrcTerminal   1
+          DstComponent  "Netlist3"
+          DstTerminal   2
         }
         Annotation {
           Name          "<html><body>\n<p><span style=\" font-weight:700; colo"
