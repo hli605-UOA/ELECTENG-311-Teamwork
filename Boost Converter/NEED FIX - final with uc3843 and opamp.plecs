@@ -1,5 +1,5 @@
 Plecs {
-  Name          "Boost_Converter_PR2_V3"
+  Name          "NEED FIX - final with uc3843 and opamp"
   Version       "5.0"
   CircuitModel  "ContStateSpace"
   StartTime     "0.0"
@@ -71,7 +71,7 @@ Plecs {
   InvalidNetlistFunctionEvaluationMsg "1"
   IncompatibleInitialConditionMsg "2"
   Schematic {
-    Location      [7, 65; 1392, 892]
+    Location      [10, 65; 1392, 892]
     ZoomFactor    1
     SliderPosition [0, 0]
     ShowBrowser   off
@@ -147,7 +147,7 @@ Plecs {
           LabelPosition west
           Parameter {
             Variable      "R"
-            Value         "50"
+            Value         "5"
             Show          on
           }
         }
@@ -174,11 +174,11 @@ Plecs {
           Flipped       off
           LabelPosition south
           Frame         [-15, -25; 15, 25]
-          Location      [913, 58; 1846, 998]
+          Location      [913, 58; 1846, 1025]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAKgA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAGIA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABiAP///wAAAAMAAAOlAAA"
-"BKPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA6UAAABEAP///wAAA6UAAAJf"
+"BKPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA6UAAABEAP///wAAA6UAAAJ6"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
@@ -191,7 +191,7 @@ Plecs {
           TimeRange     "0"
           ScrollingMode "1"
           SingleTimeAxis "1"
-          Open          "0"
+          Open          "1"
           Ts            "-1"
           SampleLimit   "0"
           XAxisLabel    "Time / s"
@@ -3545,6 +3545,7 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition none
+      CommentOut    DisabledOpenCircuit
       Frame         [-110, -80; 110, 80]
       SampleTime    "-1"
       CodeGenDiscretizationMethod "2"
@@ -3634,11 +3635,11 @@ Plecs {
           Flipped       off
           LabelPosition south
           Frame         [-15, -25; 15, 25]
-          Location      [68, 63; 917, 1036]
+          Location      [68, 63; 917, 1045]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAKgA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAGIA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABiAP///wAAAAMAAANRAAA"
-"A9fwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA1EAAABEAP///wAAA1EAAAKz"
+"A9fwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA1EAAABEAP///wAAA1EAAAK8"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
@@ -4536,11 +4537,11 @@ Plecs {
           Flipped       off
           LabelPosition south
           Frame         [-15, -15; 15, 15]
-          Location      [247, 226; 1075, 759]
+          Location      [247, 226; 1075, 768]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAADAA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAGIA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABiAP///wAAAAMAAAM8AAA"
-"AYvwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAAzwAAABEAP///wAAAzwAAAGO"
+"AYvwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAAzwAAABEAP///wAAAzwAAAGX"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
@@ -6908,7 +6909,7 @@ Plecs {
       MaskIconOpaque off
       MaskIconRotates on
       Schematic {
-        Location      [614, 40; 1674, 997]
+        Location      [855, 50; 1915, 1007]
         ZoomFactor    1
         SliderPosition [0, 0]
         ShowBrowser   off
@@ -6961,7 +6962,7 @@ Plecs {
           LabelPosition west
           Parameter {
             Variable      "R"
-            Value         "5"
+            Value         "50"
             Show          on
           }
         }
@@ -6988,11 +6989,11 @@ Plecs {
           Flipped       off
           LabelPosition south
           Frame         [-15, -25; 15, 25]
-          Location      [126, 54; 975, 1043]
+          Location      [439, 71; 1288, 1069]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAKgA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAGIA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABiAP///wAAAAMAAANRAAA"
-"A5PwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA1EAAABEAP///wAAA1EAAALU"
+"A5PwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA1EAAABEAP///wAAA1EAAALd"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
@@ -7356,11 +7357,11 @@ Plecs {
           Flipped       off
           LabelPosition south
           Frame         [-15, -20; 15, 20]
-          Location      [235, 140; 1153, 921]
+          Location      [235, 140; 1153, 939]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAIAA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAGIA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABiAP///wAAAAMAAAOWAAA"
-"As/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA5YAAABEAP///wAAA5YAAAI1"
+"As/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA5YAAABEAP///wAAA5YAAAJH"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
@@ -7373,7 +7374,7 @@ Plecs {
           TimeRange     "0"
           ScrollingMode "1"
           SingleTimeAxis "1"
-          Open          "0"
+          Open          "1"
           Ts            "-1"
           SampleLimit   "0"
           XAxisLabel    "Time / s"
@@ -7515,12 +7516,12 @@ Plecs {
           }
           Parameter {
             Variable      "kp"
-            Value         "0.01"
+            Value         "0.1"
             Show          off
           }
           Parameter {
             Variable      "ki"
-            Value         "20"
+            Value         "200"
             Show          off
           }
           Parameter {
@@ -7685,7 +7686,7 @@ Plecs {
             Direction     right
           }
           Schematic {
-            Location      [821, 250; 1845, 759]
+            Location      [-177, 174; 847, 683]
             ZoomFactor    1
             SliderPosition [14, 0]
             ShowBrowser   off
@@ -8823,20 +8824,6 @@ Plecs {
           }
         }
         Component {
-          Type          DCVoltageSource
-          Name          "10V"
-          Show          on
-          Position      [315, 665]
-          Direction     down
-          Flipped       off
-          LabelPosition east
-          Parameter {
-            Variable      "V"
-            Value         "10"
-            Show          off
-          }
-        }
-        Component {
           Type          Resistor
           Name          "R6"
           Show          on
@@ -8846,7 +8833,7 @@ Plecs {
           LabelPosition south
           Parameter {
             Variable      "R"
-            Value         "25e3"
+            Value         "35e3"
             Show          on
           }
         }
@@ -8888,7 +8875,7 @@ Plecs {
           LabelPosition west
           Parameter {
             Variable      "R"
-            Value         "25e3"
+            Value         "35e3"
             Show          on
           }
         }
@@ -8902,7 +8889,7 @@ Plecs {
           LabelPosition west
           Parameter {
             Variable      "C"
-            Value         "50e-12"
+            Value         "12e-12"
             Show          on
           }
           Parameter {
@@ -8910,15 +8897,6 @@ Plecs {
             Value         "0"
             Show          off
           }
-        }
-        Component {
-          Type          Ground
-          Name          "Ground"
-          Show          off
-          Position      [315, 690]
-          Direction     down
-          Flipped       on
-          LabelPosition west
         }
         Component {
           Type          Capacitor
@@ -8930,7 +8908,7 @@ Plecs {
           LabelPosition south
           Parameter {
             Variable      "C"
-            Value         "50e-12"
+            Value         "12e-12"
             Show          on
           }
           Parameter {
@@ -9300,11 +9278,11 @@ Plecs {
           Flipped       off
           LabelPosition south
           Frame         [-15, -15; 15, 15]
-          Location      [88, 265; 866, 751]
+          Location      [88, 265; 866, 769]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAFgA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAGIA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABiAP///wAAAAMAAAMKAAA"
-"AgvwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAAwoAAABEAP///wAAAwoAAAE/"
+"AgvwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAAwoAAABEAP///wAAAwoAAAFR"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
@@ -9500,14 +9478,23 @@ Plecs {
           LabelPosition west
         }
         Component {
+          Type          Ground
+          Name          "Ground"
+          Show          off
+          Position      [315, 570]
+          Direction     down
+          Flipped       off
+          LabelPosition west
+        }
+        Component {
           Type          Reference
           SrcComponent  "Components/Electrical/Electronics/Op-Amp"
           Name          "Op-Amp"
           Show          on
           Position      [315, 630]
           Direction     down
-          Flipped       on
-          LabelPosition north
+          Flipped       off
+          LabelPosition south
           Frame         [-20, -20; 20, 20]
           Parameter {
             Variable      "A"
@@ -9533,6 +9520,20 @@ Plecs {
             Type          Port
             Position      [0, 15]
             Direction     down
+          }
+        }
+        Component {
+          Type          DCVoltageSource
+          Name          "10V"
+          Show          on
+          Position      [315, 595]
+          Direction     up
+          Flipped       on
+          LabelPosition west
+          Parameter {
+            Variable      "V"
+            Value         "10"
+            Show          off
           }
         }
         Connection {
@@ -9760,7 +9761,7 @@ Plecs {
         Connection {
           Type          Wire
           SrcComponent  "Op-Amp"
-          SrcTerminal   2
+          SrcTerminal   1
           Points        [375, 640; 375, 655]
           Branch {
             Points        [440, 655]
@@ -9777,13 +9778,6 @@ Plecs {
             DstComponent  "R14/Rib"
             DstTerminal   2
           }
-        }
-        Connection {
-          Type          Wire
-          SrcComponent  "Ground"
-          SrcTerminal   1
-          DstComponent  "10V"
-          DstTerminal   1
         }
         Connection {
           Type          Wire
@@ -9810,7 +9804,7 @@ Plecs {
         Connection {
           Type          Wire
           SrcComponent  "Op-Amp"
-          SrcTerminal   1
+          SrcTerminal   2
           Points        [375, 620]
           Branch {
             Points        [415, 620; 415, 595]
@@ -9992,18 +9986,25 @@ Plecs {
         }
         Connection {
           Type          Wire
-          SrcComponent  "10V"
-          SrcTerminal   2
-          DstComponent  "Op-Amp"
-          DstTerminal   4
-        }
-        Connection {
-          Type          Wire
           SrcComponent  "R11"
           SrcTerminal   2
           Points        [120, 630]
           DstComponent  "IFB_F"
           DstTerminal   1
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "Ground"
+          SrcTerminal   1
+          DstComponent  "10V"
+          DstTerminal   2
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "10V"
+          SrcTerminal   1
+          DstComponent  "Op-Amp"
+          DstTerminal   4
         }
       }
     }
