@@ -1,12 +1,12 @@
 Plecs {
-  Name          "NEED FIX - final with uc3843 and opamp"
+  Name          "Large Overshoot - Closedloop w UC3843"
   Version       "5.0"
   CircuitModel  "ContStateSpace"
   StartTime     "0.0"
-  TimeSpan      "0.1"
+  TimeSpan      "1"
   Timeout       ""
   Solver        "auto"
-  MaxStep       "1e-6"
+  MaxStep       "1e-7"
   InitStep      "-1"
   FixedStep     "1e-3"
   Refine        "1"
@@ -6909,7 +6909,7 @@ Plecs {
       MaskIconOpaque off
       MaskIconRotates on
       Schematic {
-        Location      [673, 34; 1733, 991]
+        Location      [645, 260; 1705, 1217]
         ZoomFactor    1
         SliderPosition [0, 0]
         ShowBrowser   off
@@ -6976,7 +6976,7 @@ Plecs {
           LabelPosition east
           Parameter {
             Variable      "V"
-            Value         "2.5"
+            Value         "3.5"
             Show          on
           }
         }
@@ -7357,11 +7357,11 @@ Plecs {
           Flipped       off
           LabelPosition south
           Frame         [-15, -20; 15, 20]
-          Location      [235, 140; 1153, 948]
+          Location      [235, 140; 1153, 957]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAIAA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAGIA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABiAP///wAAAAMAAAOWAAA"
-"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA5YAAABEAP///wAAA5YAAAKU"
+"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA5YAAABEAP///wAAA5YAAAKd"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
@@ -7516,12 +7516,12 @@ Plecs {
           }
           Parameter {
             Variable      "kp"
-            Value         "0.1"
+            Value         "1"
             Show          off
           }
           Parameter {
             Variable      "ki"
-            Value         "200"
+            Value         "2000"
             Show          off
           }
           Parameter {
@@ -7561,17 +7561,17 @@ Plecs {
           }
           Parameter {
             Variable      "up_limit"
-            Value         "4.5"
+            Value         "4"
             Show          off
           }
           Parameter {
             Variable      "low_limit"
-            Value         "0.5"
+            Value         "1"
             Show          off
           }
           Parameter {
             Variable      "aw_method"
-            Value         "2"
+            Value         "3"
             Show          off
           }
           Parameter {
@@ -9000,16 +9000,16 @@ Plecs {
           Flipped       off
           LabelPosition south
           Frame         [-15, -20; 15, 20]
-          Location      [141, 232; 861, 876]
+          Location      [141, 232; 861, 885]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAIAA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAGIA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABiAP///wAAAAMAAALQAAA"
-"AYvwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAAtAAAABEAP///wAAAtAAAAH9"
+"AYvwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAAtAAAABEAP///wAAAtAAAAIG"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
-          HeaderState   "{\"DefaultSecSize\":100,\"FirstSecSize\":189,\"Labels"
-"\":[\"Delta\"],\"VisualIdxs\":[3]}"
+          HeaderState   "{\"DefaultSecSize\":0,\"FirstSecSize\":189,\"Labels\""
+":[\"Delta\"],\"VisualIdxs\":[3]}"
           PlotPalettes  "AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 "AAAA=="
@@ -9278,11 +9278,11 @@ Plecs {
           Flipped       off
           LabelPosition south
           Frame         [-15, -15; 15, 15]
-          Location      [88, 265; 866, 778]
+          Location      [88, 265; 866, 958]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAFgA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAGIA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABiAP///wAAAAMAAAMKAAA"
-"AgvwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAAwoAAABEAP///wAAAwoAAAFa"
+"AgvwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAAwoAAABEAP///wAAAwoAAAIO"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
@@ -9294,7 +9294,7 @@ Plecs {
           TimeRange     "0"
           ScrollingMode "1"
           SingleTimeAxis "1"
-          Open          "0"
+          Open          "1"
           Ts            "-1"
           SampleLimit   "0"
           XAxisLabel    "Time / s"
