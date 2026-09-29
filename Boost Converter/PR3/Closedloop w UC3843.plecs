@@ -6909,7 +6909,7 @@ Plecs {
       MaskIconOpaque off
       MaskIconRotates on
       Schematic {
-        Location      [232, 105; 1698, 1062]
+        Location      [202, 46; 1668, 1003]
         ZoomFactor    1
         SliderPosition [0, 0]
         ShowBrowser   off
@@ -7516,7 +7516,7 @@ Plecs {
           }
           Parameter {
             Variable      "kp"
-            Value         "0.9"
+            Value         "2"
             Show          off
           }
           Parameter {
@@ -9278,11 +9278,11 @@ Plecs {
           Flipped       off
           LabelPosition south
           Frame         [-15, -15; 15, 15]
-          Location      [927, 54; 1705, 1089]
+          Location      [927, 45; 1705, 1085]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAFgA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAGIA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABiAP///wAAAAMAAAMKAAA"
-"AgvwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAAwoAAABEAP///wAAAwoAAANk"
+"AgvwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAAwoAAABEAP///wAAAwoAAANp"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
@@ -9419,25 +9419,6 @@ Plecs {
               KeepBaseline  off
               BaselineValue 0
             }
-          }
-        }
-        Component {
-          Type          Capacitor
-          Name          "C5"
-          Show          on
-          Position      [855, 215]
-          Direction     down
-          Flipped       on
-          LabelPosition west
-          Parameter {
-            Variable      "C"
-            Value         "33000e-12"
-            Show          off
-          }
-          Parameter {
-            Variable      "v_init"
-            Value         "0"
-            Show          off
           }
         }
         Component {
