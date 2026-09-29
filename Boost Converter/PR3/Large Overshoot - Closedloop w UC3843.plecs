@@ -6909,7 +6909,7 @@ Plecs {
       MaskIconOpaque off
       MaskIconRotates on
       Schematic {
-        Location      [645, 260; 1705, 1217]
+        Location      [232, 105; 1698, 1062]
         ZoomFactor    1
         SliderPosition [0, 0]
         ShowBrowser   off
@@ -7294,9 +7294,9 @@ Plecs {
           Flipped       on
           LabelPosition south
           Probe {
-            Component     "Vm1"
+            Component     "R1"
             Path          "Closed-Loop with \\nUC3843 and PI1"
-            Signals       {"Measured voltage"}
+            Signals       {"Resistor voltage"}
           }
         }
         Component {
@@ -7310,7 +7310,7 @@ Plecs {
           Frame         [-10, -10; 10, 10]
           Parameter {
             Variable      "Value"
-            Value         "2.5"
+            Value         "5"
             Show          off
           }
           Parameter {
@@ -7357,11 +7357,11 @@ Plecs {
           Flipped       off
           LabelPosition south
           Frame         [-15, -20; 15, 20]
-          Location      [235, 140; 1153, 957]
+          Location      [235, 140; 1153, 966]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAIAA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAGIA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABiAP///wAAAAMAAAOWAAA"
-"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA5YAAABEAP///wAAA5YAAAKd"
+"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA5YAAABEAP///wAAA5YAAAKm"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
@@ -7516,12 +7516,12 @@ Plecs {
           }
           Parameter {
             Variable      "kp"
-            Value         "1"
+            Value         "0.9"
             Show          off
           }
           Parameter {
             Variable      "ki"
-            Value         "2000"
+            Value         "100"
             Show          off
           }
           Parameter {
@@ -9278,11 +9278,11 @@ Plecs {
           Flipped       off
           LabelPosition south
           Frame         [-15, -15; 15, 15]
-          Location      [88, 265; 866, 958]
+          Location      [927, 54; 1705, 1089]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAFgA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAGIA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABiAP///wAAAAMAAAMKAAA"
-"AgvwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAAwoAAABEAP///wAAAwoAAAIO"
+"AgvwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAAwoAAABEAP///wAAAwoAAANk"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
@@ -9294,7 +9294,7 @@ Plecs {
           TimeRange     "0"
           ScrollingMode "1"
           SingleTimeAxis "1"
-          Open          "1"
+          Open          "0"
           Ts            "-1"
           SampleLimit   "0"
           XAxisLabel    "Time / s"
@@ -9422,38 +9422,10 @@ Plecs {
           }
         }
         Component {
-          Type          Resistor
-          Name          "R22"
-          Show          on
-          Position      [800, 150]
-          Direction     up
-          Flipped       off
-          LabelPosition east
-          Parameter {
-            Variable      "R"
-            Value         "10000"
-            Show          off
-          }
-        }
-        Component {
-          Type          Resistor
-          Name          "R24"
-          Show          on
-          Position      [800, 215]
-          Direction     up
-          Flipped       off
-          LabelPosition east
-          Parameter {
-            Variable      "R"
-            Value         "10000"
-            Show          off
-          }
-        }
-        Component {
           Type          Capacitor
           Name          "C5"
           Show          on
-          Position      [855, 190]
+          Position      [855, 215]
           Direction     down
           Flipped       on
           LabelPosition west
@@ -9467,15 +9439,6 @@ Plecs {
             Value         "0"
             Show          off
           }
-        }
-        Component {
-          Type          Voltmeter
-          Name          "Vm1"
-          Show          on
-          Position      [770, 215]
-          Direction     up
-          Flipped       off
-          LabelPosition west
         }
         Component {
           Type          Ground
@@ -9594,22 +9557,8 @@ Plecs {
           Points        [670, 110]
           Branch {
             Points        [730, 110]
-            Branch {
-              DstComponent  "R1"
-              DstTerminal   1
-            }
-            Branch {
-              Points        [800, 110]
-              Branch {
-                Points        [855, 110]
-                DstComponent  "C5"
-                DstTerminal   1
-              }
-              Branch {
-                DstComponent  "R22"
-                DstTerminal   1
-              }
-            }
+            DstComponent  "R1"
+            DstTerminal   1
           }
           Branch {
             Points        [600, 110]
@@ -9647,29 +9596,8 @@ Plecs {
                 }
                 Branch {
                   Points        [730, 260]
-                  Branch {
-                    DstComponent  "R1"
-                    DstTerminal   2
-                  }
-                  Branch {
-                    Points        [770, 260]
-                    Branch {
-                      Points        [800, 260]
-                      Branch {
-                        Points        [855, 260]
-                        DstComponent  "C5"
-                        DstTerminal   2
-                      }
-                      Branch {
-                        DstComponent  "R24"
-                        DstTerminal   2
-                      }
-                    }
-                    Branch {
-                      DstComponent  "Vm1"
-                      DstTerminal   2
-                    }
-                  }
+                  DstComponent  "R1"
+                  DstTerminal   2
                 }
               }
               Branch {
@@ -10003,21 +9931,6 @@ Plecs {
           }
           Branch {
             DstComponent  "Scope5"
-            DstTerminal   1
-          }
-        }
-        Connection {
-          Type          Wire
-          SrcComponent  "R22"
-          SrcTerminal   2
-          Points        [800, 185]
-          Branch {
-            DstComponent  "R24"
-            DstTerminal   1
-          }
-          Branch {
-            Points        [770, 185]
-            DstComponent  "Vm1"
             DstTerminal   1
           }
         }
